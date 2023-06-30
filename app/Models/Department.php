@@ -9,7 +9,7 @@ class Department extends Model
 {
     use HasFactory;
     protected $table = 'departments';
-    protected $fillable = ['id', 'eID', 'officeEmail', 'department', 'designation', 'dateOfJoining', 'ctc','perfomance_bonus'];
+    protected $fillable = ['id', 'eID', 'officeEmail', 'department', 'designation','dateOfRelieving', 'dateOfJoining', 'ctc','perfomance_bonus'];
 
     public function employee(){
         return $this->belongsTo(Employee::class,'eID');

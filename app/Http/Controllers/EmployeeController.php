@@ -16,6 +16,7 @@ use App\Models\Freelancer;
 use crypt;
 use Session;
 use Carbon\Carbon;
+use DB;
 
 class EmployeeController extends Controller
 {
@@ -47,9 +48,15 @@ class EmployeeController extends Controller
         // //     $employee->department = $this->department($employee->department);
         // //     $employee->designation = $this->designation($employee->designation);
         // // }
-        $data['employees'] =  Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->get();
+       
+        $data['employees'] =  Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->whereNull('employees.dateOfRelieving')->get();
 
         return view('employee.employee', $data);
+    }
+
+    public function employeeHistory(){
+        $data['employees'] = Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->get();
+        return view('employee.history', $data);
     }
 
     public function create(Request $request){
@@ -171,16 +178,16 @@ class EmployeeController extends Controller
             return $data;
         }
 
-        $maxFreelancer = Freelancer::where('isDeleted','no')->max('eID');
-        $maxEmployee = Employee::where('isDeleted','no')->max('eID');
+        // $maxFreelancer = Freelancer::where('isDeleted','no')->max('eID');
+        // $maxEmployee = Employee::where('isDeleted','no')->max('eID');
       
-        if($maxFreelancer > $maxEmployee ){
-            $max_eID = $maxFreelancer;
-        }else{
-            $max_eID = $maxEmployee;
-        }
+        // if($maxFreelancer > $maxEmployee ){
+        //     $max_eID = $maxFreelancer;
+        // }else{
+        //     $max_eID = $maxEmployee;
+        // }
 
-        $data['last_eID'] = $max_eID;
+        // $data['last_eID'] = $max_eID;
 
         // $all_employee = Employee::orderBY('eID', 'DESC')->get();
         // $eID = [];
@@ -194,7 +201,7 @@ class EmployeeController extends Controller
         //     $data['last_eID'] = '0';
         // }
 
-        return view('employee.create', $data);
+        return view('employee.create');
     }
 
     public function update(Request $request, $id){
@@ -275,7 +282,9 @@ class EmployeeController extends Controller
                     'bloodgroup' => $request->input('bloodgroup'),
                     'address' => $request->input('address'),
                     'employeeType' => $request->input('employeeType'),
-                    'company' => $request->input('company')
+                    'company' => $request->input('company'),
+                    'dateOfRelieving' =>$request->input('dateOfRelieving')
+
                 ];
 
                 Employee::where('eID', $id)->update($data1);
@@ -295,6 +304,7 @@ class EmployeeController extends Controller
                     'designation' => $request->input('designation'),
                     'dateOfJoining' => $request->input('dateOfJoining'),
                     'ctc' => $request->input('ctc'),
+                    'dateOfRelieving' =>$request->input('dateOfRelieving'),
                     'perfomance_bonus' => $request->input('PBorOA')
                 ];
 

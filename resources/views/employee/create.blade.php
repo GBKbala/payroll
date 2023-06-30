@@ -259,13 +259,26 @@
                                                     <option value="axecode">Axe Code</option>
                                                     <option value="zoneflux">Zone Flux</option>
                                                 </select>
-                                                <label for="floatingInputGrid">Company</label>
+                                                <label for="floatingInputGrid">Companyssss</label>
                                                 <div class="invalid-feedback designation">
                                                     Please provide Company.
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="row g-2 mb-2">
+                                            <div class="col-md-6">
+                                            <div class="form-floating" id="datepicker4">
+                                                <input type="text" onkeypress="return limitInput(event)" data-type="date" name="dateOfJoining" id="dateOfJoining" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" disabled>
+                                                <label for="floatingInputGrid" >Date of Relieving</label>
+                                                <div class="invalid-feedback dateOfJoining">
+                                                    Please provide date of joining.
+                                                </div>
+                                            </div>
+                                            </div>    
+                                       </div>
                                     </div>
+                                    
                                     <!-- <div class="row g-2 mb-2">
                                         <div class="col-md-6">
                                             <div class="form-floating">

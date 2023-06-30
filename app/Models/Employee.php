@@ -9,7 +9,7 @@ class Employee extends Model
 {
     use HasFactory;
     protected $table = 'employees';
-    protected $fillable = ['name', 'dob', 'email', 'phone', 'bloodgroup', 'address', 'employeeLogin','employeeType','company'];
+    protected $fillable = ['name', 'dob', 'email', 'phone', 'bloodgroup', 'address', 'employeeLogin','dateOfRelieving','employeeType','company'];
 
     public function department(){
         return $this->hasOne(Department::class,'eID','eID');

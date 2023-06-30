@@ -274,6 +274,18 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                         <div class="row g-2 mb-2">
+                                            <div class="col-md-6">
+                                            <div class="form-floating" id="datepicker4">
+                                                <input type="text" onkeypress="return limitInput(event)" data-type="date" name="dateOfJoining" id="dateOfRelieving" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" value="{{$employee->dateOfRelieving}}">
+                                                <label for="floatingInputGrid" >Date of Relieving</label>
+                                                <div class="invalid-feedback dateOfJoining">
+                                                    Please provide date of Relieving.
+                                                </div>
+                                            </div>
+                                            </div>    
+                                       </div>
                                         </div>
                                         <div class="row g-2 mb-2">
                                             <div class="col-md">

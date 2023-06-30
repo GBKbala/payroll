@@ -38,9 +38,9 @@
                                     <th>Email</th>
                                     <th>Date of Joining</th>
                                     <th>CTC</th>
-                                    <th>View</th>
+                                    <!-- <th>View</th>
                                     <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>Delete</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,8 +55,7 @@
                                         <td>{{ $employee->email }}</td>
                                         <td>{{ $employee->department->dateOfJoining }}</td>
                                         <td data-data="ctc">{{ $employee->department->ctc }}</td>
-                                        <td>
-                                            <!-- @php if($employee->employeeType !='freelancer' )  @endphp -->
+                                        <!-- <td>
                                             @if($employee->employeeType != 'freelancer')
                                                 <a href="{{ route('employee.id', $employee->eID) }}">
                                                     <i class="mdi mdi-eye"></i>
@@ -80,7 +79,7 @@
                                                 <i class="dripicons-trash"></i>
                                                 Delete
                                             </a>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -88,7 +87,7 @@
                         <div class="text-end">
                             <div class="form-switch">
                                 <input type="checkbox" class="form-check-input" value="all" id="allEmployees">
-                                <label class="form-check-label" for="customSwitch1">All Employees</label>
+                                <label class="form-check-label" for="customSwitch1">Current Employees</label>
                             </div>
                         </div>
                         
@@ -133,8 +132,7 @@
         $(document).ready(function(){
             $('#allEmployees').change(function(){
                 if($('#allEmployees').prop('checked')){
-
-                    window.location.href="{{route('employee.history')}}"; 
+                    window.location.href='{{route('employee.all')}}';
                 }
             });
         });

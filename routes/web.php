@@ -19,7 +19,7 @@ use App\Http\Controllers\FreelancerController;
 |
 */
 
-// Route::get('/', function() { return view('index'); });
+// Route::get('/demo', function() { return 'ok'; });
 // Route::get('/', [RouteController::class, 'index'])->name('index');
 Route::get('/', [EmployeeController::class, 'index'])->name('index');
 Route::any('/login', [AuthController::class, 'login'])->name('login');
@@ -183,7 +183,8 @@ Route::prefix('employee')->group(function() {
     Route::any('create', [EmployeeController::class, 'create'])->name('employee.create');
     Route::any('update/{id}', [EmployeeController::class, 'update'])->name('employee.update');
     Route::any('delete/{id}', [EmployeeController::class, 'delete'])->name('employee.delete');
-    Route::any('{id}', [EmployeeController::class, 'employee'])->name('employee.id');
+    Route::any('view/{id}', [EmployeeController::class, 'employee'])->name('employee.id');
+    Route::get('history',[EmployeeController::class,'employeeHistory'])->name('employee.history');
 });
 
 Route::prefix('salary')->group(function() {
