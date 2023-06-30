@@ -77,7 +77,7 @@
                                     <th>Account Number</th>
                                     <th>Performance Bonus</th>
                                     <th>Employee Contribution</th>
-                                    <th>Tax</th>
+                                    <th>PT</th>
                                     <th>Salary</th>
                                     <th>Net salary</th>
                                     <th>Edit</th>
