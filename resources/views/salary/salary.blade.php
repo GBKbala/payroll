@@ -75,7 +75,7 @@
                                     {{-- <th>Leave</th> --}}
                                     <th>LOP</th>
                                     <th>Account Number</th>
-                                    <th>Performance Bonus</th>
+                                    <th>PB</th>
                                     <th>Employee Contribution</th>
                                     <th>PT</th>
                                     <th>Salary</th>
