@@ -261,6 +261,7 @@
                             TotalSalary=Math.round(TotalSalary);
                             // console.log(TotalSalary);
                             console.log(data.net_salary);
+                            data.accountNumber = data.accountNumber.replace(/.(?=.{4})/g, 'X');
                             table.fnAddData([
                                 data.eID,
                                 data.name,
