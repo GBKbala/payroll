@@ -44,7 +44,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="name" class="form-control" id="name" placeholder="" value="{{ $employee->name }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="name" class="form-control"    name="name" id="name" placeholder="" value="{{ $employee->name }}">
                                                     <label for="floatingInputGrid">Name of the Employee</label>
                                                     <div class="invalid-feedback name">
                                                         Please provide name.
@@ -53,7 +53,7 @@
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating" id="datepicker4">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="date" id="dob" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" value="{{ $employee->dob }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="date" name="dob" id="dob" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" value="{{ $employee->dob }}">
                                                     <label for="floatingInputGrid">Date of Birth</label>
                                                     <div class="invalid-feedback dob">
                                                         Please provide date of birth.
@@ -64,7 +64,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="email" onkeypress="return limitInput(event)" data-type="email" id="email" name="example-email" class="form-control" placeholder="" value="{{ $employee->email }}">
+                                                    <input type="email" onkeypress="return limitInput(event)" data-type="email" id="email" name="email" class="form-control" placeholder="" value="{{ $employee->email }}">
                                                     <label for="floatingInputGrid">Personal Email</label>
                                                     <div class="invalid-feedback email">
                                                         Please provide email.
@@ -73,7 +73,7 @@
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="phone" id="phone" class="form-control" value="{{ $employee->phone }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="phone" name="phone" id="phone" class="form-control" value="{{ $employee->phone }}">
                                                     <label for="floatingInputGrid">Phone Number</label>
                                                     <div class="invalid-feedback phone">
                                                         Please provide phone number.
@@ -84,7 +84,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <select class="form-select" id="bloodgroup" aria-label="Floating label select example">
+                                                    <select class="form-select" name="blodgroup" id="bloodgroup" aria-label="Floating label select example">
                                                         <option disabled value=""></option>
                                                         <option value="a+" {{ $employee->bloodgroup == 'a+' ? 'selected' : '' }}>A +ve</option>
                                                         <option value="a+" {{ $employee->bloodgroup == 'a1+' ? 'selected' : '' }}>A1 +ve</option>
@@ -109,7 +109,7 @@
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="address" id="address" class="form-control" value="{{ $employee->address }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="address" name="address" id="address" class="form-control" value="{{ $employee->address }}">
                                                     <label for="floatingInputGrid">Address</label>
                                                     <div class="invalid-feedback address">
                                                         Please provide address.
@@ -126,7 +126,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="name" id="bankName" class="form-control" value="{{ $employee->bankdetail->bankName }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="name" name="bankName" id="bankName" class="form-control" value="{{ $employee->bankdetail->bankName }}">
                                                     <label for="floatingInputGrid">Bank Name</label>
                                                     <div class="invalid-feedback bankName">
                                                         Please provide bank name.
@@ -135,7 +135,7 @@
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="name" id="branch" class="form-control" value="{{ $employee->bankdetail->branch }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="name" name="branch" id="branch" class="form-control" value="{{ $employee->bankdetail->branch }}">
                                                     <label for="floatingInputGrid">Branch Name</label>
                                                     <div class="invalid-feedback branch">
                                                         Please provide branch name.
@@ -146,7 +146,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="ifsc" id="ifscCode" class="form-control" value="{{ $employee->bankdetail->ifscCode }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="ifsc" name="ifscCode" id="ifscCode" class="form-control" value="{{ $employee->bankdetail->ifscCode }}">
                                                     <label for="floatingInputGrid">IFSC Code</label>
                                                     <div class="invalid-feedback ifscCode">
                                                         Please provide IFSC code.
@@ -155,7 +155,7 @@
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="number" id="accountNumber" class="form-control" value="{{ $employee->bankdetail->accountNumber }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="number" name="accountNumber" id="accountNumber" class="form-control" value="{{ $employee->bankdetail->accountNumber }}">
                                                     <label for="floatingInputGrid">Account Number</label>
                                                     <div class="invalid-feedback accountNumber">
                                                         Please provide account number.
@@ -186,7 +186,7 @@
                                         </div>
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="email" onkeypress="return limitInput(event)" data-type="email" id="officeEmail" name="example-email" class="form-control" placeholder="" value="{{ $employee->department->officeEmail }}">
+                                                    <input type="email" onkeypress="return limitInput(event)" data-type="email" name="officeEmail" id="officeEmail" name="example-email" class="form-control" placeholder="" value="{{ $employee->department->officeEmail }}">
                                                     <label for="floatingInputGrid">Office Email</label>
                                                     <div class="invalid-feedback officeEmail">
                                                         Please provide mail.
@@ -197,7 +197,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="text" id="department" class="form-control" value="{{ $employee->department->department }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="text" name="department" id="department" class="form-control" value="{{ $employee->department->department }}">
                                                     {{-- <select class="form-select" id="department" aria-label="Floating label select example">
                                                         <option disabled selected value=""></option>
                                                         <option value="1" {{ $employee->department == '1' ? 'selected' : '' }} >Developing</option>
@@ -213,7 +213,7 @@
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="text" id="designation" class="form-control" value="{{ $employee->department->designation }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="text" name="designation" id="designation" class="form-control" value="{{ $employee->department->designation }}">
                                                     {{-- <select class="form-select" id="designation" aria-label="Floating label select example">
                                                         <option disabled selected value=""></option>
                                                         <option value="1" {{ $employee->designation == '1' ? 'selected' : '' }} >Fresher / Trainee</option>
@@ -233,7 +233,7 @@
                                             <div class="col-md">
                                                 <div class="form-floating" id="datepicker4">
                                                     {{-- <input type="text" id="dateOfJoining" class="form-control"> --}}
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="date" id="dateOfJoining" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" value="{{ $employee->department->dateOfJoining }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="date" name="dateOfJoining" id="dateOfJoining" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" value="{{ $employee->department->dateOfJoining }}">
                                                     <label for="floatingInputGrid">Date of Joining</label>
                                                     <div class="invalid-feedback dateOfJoining">
                                                         Please provide date of joining.
@@ -242,7 +242,7 @@
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="number" onkeyup="getComma(this, this.id)" id="ctc" class="form-control" value="{{ $employee->department->ctc }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="number" onkeyup="getComma(this, this.id)" name="ctc" id="ctc" class="form-control" value="{{ $employee->department->ctc }}">
                                                     <label for="floatingInputGrid">CTC (per month)</label>
                                                     <div class="invalid-feedback ctc">
                                                         Please provide CTC.
@@ -253,7 +253,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md-6">
                                                 <div class="form-floating">
-                                                    <input type="text" onkeypress="return limitInput(event)" onkeyup="getComma(this, this.id)" id="PBorOA" class="form-control" value="{{ $employee->department->perfomance_bonus }}">
+                                                    <input type="text" onkeypress="return limitInput(event)" onkeyup="getComma(this, this.id)" name="PBorOA" id="PBorOA" class="form-control" value="{{ $employee->department->perfomance_bonus }}">
                                                     <label for="floatingInputGrid">Perfomance Bounse / Other Allowance</label>
                                                     <div class="invalid-feedback PBorOA">
                                                         Please provide Perfomance Bounse / Other Allowance.
@@ -278,7 +278,7 @@
                                          <div class="row g-2 mb-2">
                                             <div class="col-md-6">
                                             <div class="form-floating" id="datepicker4">
-                                                <input type="text" onkeypress="return limitInput(event)" data-type="date" name="dateOfJoining" id="dateOfRelieving" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" value="{{$employee->dateOfRelieving}}">
+                                                <input type="text" onkeypress="return limitInput(event)" data-type="date" name="dateOfRelieving" id="dateOfRelieving" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" value="{{$employee->dateOfRelieving}}">
                                                 <label for="floatingInputGrid" >Date of Relieving</label>
                                                 <div class="invalid-feedback dateOfJoining">
                                                     Please provide date of Relieving.
@@ -290,7 +290,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input type="checkbox" onclick="showAppraisalDateColumn()" class="form-check-input" id="appraisal">
+                                                    <input type="checkbox" onclick="showAppraisalDateColumn()" class="form-check-input" name="appraisal" id="appraisal">
                                                     <label class="form-check-label" for="customCheck1">This is Appraisal</label>
                                                 </div>
                                             </div>
@@ -304,7 +304,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md" id="appraisalDateColumn">
                                                 <div class="form-floating" id="datepicker4">
-                                                    <input type="text" onkeypress="return limitInput(event)" data-type="date" id="appraisalDate" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" value="" data-id="appraisalDate">
+                                                    <input type="text" onkeypress="return limitInput(event)" data-type="date" name="appraisalDate" id="appraisalDate" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" value="" data-id="appraisalDate">
                                                     <label for="floatingInputGrid">Appraisal take effect from</label>
                                                     <div class="invalid-feedback dob">
                                                         Please provide Appraisal date.
@@ -346,69 +346,76 @@
             }
         }
         function validate() {
-            var inputs = $('.form-floating > .form-control[id], .form-floating > .form-select[id]');
-            var errors = $('.invalid-feedback');
-            var errorcount = 0;
-            var jsonData = {};
-            for(var i=0; i<inputs.length; i++){
-                if((inputs.eq(i).val() == '' || inputs.eq(i).val() == null) && inputs.eq(i).attr('data-id') != 'appraisalDate'){
-                    inputs.eq(i).next().next().css('display', 'block');
-                    inputs.eq(i).css('border', '1px solid red');
-                    errorcount = errorcount+1;
-                } else {
-                    var emailRegex =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-                    if(inputs.eq(i).attr('type') == 'email'){
-                        if(inputs.eq(i).val().match(emailRegex)){
-                            inputs.eq(i).next().next().css('display', 'none');
-                            inputs.eq(i).css('border', '1px solid var(--ct-input-border-color)');
-                        } else {
-                            inputs.eq(i).next().next().css('display', 'block');
-                            inputs.eq(i).css('border', '1px solid red');
-                            errorcount = errorcount+1;
-                        }
-                    } else if(inputs.eq(i).attr('id') == 'phone'){
-                        if(inputs.eq(i).val().length < 10){
-                            inputs.eq(i).next().next().css('display', 'block');
-                            inputs.eq(i).css('border', '1px solid red');
-                            errorcount = errorcount+1;
-                        } else {
-                            inputs.eq(i).next().next().css('display', 'none');
-                            inputs.eq(i).css('border', '1px solid var(--ct-input-border-color)');
-                        }
-                    } else if(inputs.eq(i).attr('data-id') == 'appraisalDate'){
-                        if($('#appraisal:checked').val() == 'on'){
-                            if(inputs.eq(i).val() == '' || inputs.eq(i).val() == null){
-                                inputs.eq(i).next().next().css('display', 'block');
-                                inputs.eq(i).css('border', '1px solid red');
-                                errorcount = errorcount+1;
-                            } else {
-                                inputs.eq(i).next().next().css('display', 'none');
-                                inputs.eq(i).css('border', '1px solid var(--ct-input-border-color)');
-                            }
-                        }
-                    } else {
-                        inputs.eq(i).next().next().css('display', 'none');
-                        inputs.eq(i).css('border', '1px solid var(--ct-input-border-color)');
-                    }
-                }
-                jsonData[inputs.eq(i).attr('id')]= inputs.eq(i).val().replace(',', '');
-            }
-            if($('#appraisal:checked').val() == 'on'){
-                jsonData['appraisal'] = 'yes';
-            } else {
-                jsonData['appraisal'] = 'no';
-            }
+            // var inputs = $('.form-floating > .form-control[id], .form-floating > .form-select[id]');
+            // var errors = $('.invalid-feedback');
+            // var errorcount = 0;
+            // var jsonData = {};
+            // for(var i=0; i<inputs.length; i++){
+            //     if((inputs.eq(i).val() == '' || inputs.eq(i).val() == null) && inputs.eq(i).attr('data-id') != 'appraisalDate'){
+            //         inputs.eq(i).next().next().css('display', 'block');
+            //         inputs.eq(i).css('border', '1px solid red');
+            //         errorcount = errorcount+1;
+            //     } else {
+            //         var emailRegex =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            //         if(inputs.eq(i).attr('type') == 'email'){
+            //             if(inputs.eq(i).val().match(emailRegex)){
+            //                 inputs.eq(i).next().next().css('display', 'none');
+            //                 inputs.eq(i).css('border', '1px solid var(--ct-input-border-color)');
+            //             } else {
+            //                 inputs.eq(i).next().next().css('display', 'block');
+            //                 inputs.eq(i).css('border', '1px solid red');
+            //                 errorcount = errorcount+1;
+            //             }
+            //         } else if(inputs.eq(i).attr('id') == 'phone'){
+            //             if(inputs.eq(i).val().length < 10){
+            //                 inputs.eq(i).next().next().css('display', 'block');
+            //                 inputs.eq(i).css('border', '1px solid red');
+            //                 errorcount = errorcount+1;
+            //             } else {
+            //                 inputs.eq(i).next().next().css('display', 'none');
+            //                 inputs.eq(i).css('border', '1px solid var(--ct-input-border-color)');
+            //             }
+            //         } else if(inputs.eq(i).attr('data-id') == 'appraisalDate'){
+            //             if($('#appraisal:checked').val() == 'on'){
+            //                 if(inputs.eq(i).val() == '' || inputs.eq(i).val() == null){
+            //                     inputs.eq(i).next().next().css('display', 'block');
+            //                     inputs.eq(i).css('border', '1px solid red');
+            //                     errorcount = errorcount+1;
+            //                 } else {
+            //                     inputs.eq(i).next().next().css('display', 'none');
+            //                     inputs.eq(i).css('border', '1px solid var(--ct-input-border-color)');
+            //                 }
+            //             }
+            //         } else {
+            //             inputs.eq(i).next().next().css('display', 'none');
+            //             inputs.eq(i).css('border', '1px solid var(--ct-input-border-color)');
+            //         }
+            //     }
+            //     jsonData[inputs.eq(i).attr('id')]= inputs.eq(i).val().replace(',', '');
+            // }
+            // if($('#appraisal:checked').val() == 'on'){
+            //     jsonData['appraisal'] = 'yes';
+            // } else {
+            //     jsonData['appraisal'] = 'no';
+            // }
 
-            if(errorcount < 1){
+            var name = $('#name').val();
+            if(name == ''){
+                $('.name').html('Name Field is Required');
+                return false;
+            }else{
+                var data = $('form').serialize();
+                
                 // console.log(window.location.href)
                 // console.log(jsonData)
-                $('body').css('opacity', '0.5');
-                $('#preloader, #status').css('display', 'block');
+                // $('body').css('opacity', '0.5');
+                // $('#preloader, #status').css('display', 'block');
                 // console.log(jsonData);
+
                 $.ajax({
                     type: 'POST',
                     url: window.location.href,
-                    data: jsonData,
+                    data: data,
                     success: function(data){
                         if(data){
                             $.NotificationApp.send(data.status, data.message,"top-right", "rgba(0,0,0,0.2)", data.status);

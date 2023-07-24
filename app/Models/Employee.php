@@ -9,14 +9,14 @@ class Employee extends Model
 {
     use HasFactory;
     protected $table = 'employees';
-    protected $fillable = ['name', 'dob', 'email', 'phone', 'bloodgroup', 'address', 'employeeLogin','dateOfRelieving','employeeType','company'];
+    protected $fillable = ['name', 'eID','dob', 'email', 'phone', 'bloodgroup', 'address', 'employeeLogin','dateOfRelieving','employeeType','company'];
 
     public function department(){
-        return $this->hasOne(Department::class,'eID','eID');
+        return $this->hasOne(Department::class,'employee_id','id');
     }
 
     public function bankdetail(){
-        return $this->hasOne(Bankdetail::class,'eID','eID');
+        return $this->hasOne(Bankdetail::class,'employee_id','id');
     }
 
     public function salaryslip(){

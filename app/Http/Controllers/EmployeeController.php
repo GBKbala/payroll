@@ -49,8 +49,9 @@ class EmployeeController extends Controller
         // //     $employee->designation = $this->designation($employee->designation);
         // // }
        
-        $data['employees'] =  Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->whereNull('employees.dateOfRelieving')->get();
+        $data['employees'] =  Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->whereNull('employees.dateOfRelieving')->orderBy('employees.id','desc')->get();
 
+    //    dd($data);
         return view('employee.employee', $data);
     }
 
@@ -64,6 +65,7 @@ class EmployeeController extends Controller
             // dd($request->all());
             $name = $request->input('name');
             $dob = $request->input('dob');
+            $eID =  $request->input('eID');
             $email = $request->input('email');
             $phone = $request->input('phone');
             $bloodgroup = $request->input('bloodgroup');
@@ -126,6 +128,7 @@ class EmployeeController extends Controller
                 $employee = Employee::create([
                     // 'eID' => $eID,
                     'name' => $name,
+                    'eID' =>$eID,
                     'dob' => $dob,
                     'email' => $email,
                     'phone' => $phone,
@@ -139,7 +142,8 @@ class EmployeeController extends Controller
                 // Add employees bankdetails in bankdetails table
                 $bankdetail = BankDetail::create([
                     // 'id' => $employee->id,
-                    'eID' => $employee->id,
+                    'eID' => $eID,
+                    'employee_id' => $employee->id,
                     'bankName' => $bankName,
                     'branch' => $branch,
                     'ifscCode' => $ifscCode,
@@ -150,7 +154,8 @@ class EmployeeController extends Controller
                 // Add employees in Department table
                 $department = Department::create([
                     // 'id' =>  $employee->id,
-                    'eID' => $employee->id,
+                    'eID' => $eID,
+                    'employee_id' => $employee->id,
                     'officeEmail' => $officeEmail,
                     'department' => $department,
                     'designation' => $designation,
@@ -189,19 +194,19 @@ class EmployeeController extends Controller
 
         // $data['last_eID'] = $max_eID;
 
-        // $all_employee = Employee::orderBY('eID', 'DESC')->get();
-        // $eID = [];
+        $all_employee = Employee::orderBY('eID', 'DESC')->get();
+        $eID = [];
 
-        // foreach($all_employee as $employee){
-        //     array_push($eID, $employee->eID);
-        // }
-        // if(!empty($eID)){
-        //     $data['last_eID'] = max($eID);
-        // } else {
-        //     $data['last_eID'] = '0';
-        // }
+        foreach($all_employee as $employee){
+            array_push($eID, $employee->eID);
+        }
+        if(!empty($eID)){
+            $data['last_eID'] = max($eID);
+        } else {
+            $data['last_eID'] = '0';
+        }
 
-        return view('employee.create');
+        return view('employee.create',$data);
     }
 
     public function update(Request $request, $id){
@@ -331,7 +336,7 @@ class EmployeeController extends Controller
         //                         ->where('employees.eID', '=', $id)
         //                         ->get();
 
-        $data['employees'] = Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->where('employees.eID','=',$id)->get();
+        $data['employees'] = Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->where('employees.id','=',$id)->get();
 
         // dd($data['employees']);
         return view('employee.update', $data);
@@ -378,7 +383,7 @@ class EmployeeController extends Controller
         //                         ->where('employees.eID', '=', $id)
         //                         ->get();
 
-        $data['employees'] = Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->where('employees.eID','=',$id)->get();
+        $data['employees'] = Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->where('employees.id','=',$id)->get();
        
         return view('employee.details', $data);
     }

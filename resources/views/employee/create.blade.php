@@ -159,7 +159,33 @@
                             <div class="row mb-2">
                                 <h5 class="mb-2 mt-2">Office Use</h5>
                                 <div class="m-2">
+
                                     <div class="row g-2 mb-2">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" onkeypress="return limitInput(event)" data-type="number" name="eID" id="eID" class="form-control">
+                                                <label for="floatingInputGrid">Employee ID ( Last Employee ID: <span>{{ $last_eID }}</span> )</label>
+                                                <div class="invalid-feedback eID">
+                                                    Please provide Employee ID.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                       
+                                        <div class="col-md-6">
+                                            <div class="form-floating" id="datepicker4">
+                                                <input type="text" onkeypress="return limitInput(event)" data-type="date" name="dateOfJoining" id="dateOfJoining" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" disabled>
+                                                <label for="floatingInputGrid" >Date of Relieving</label>
+                                                <div class="invalid-feedback dateOfJoining">
+                                                    Please provide date of joining.
+                                                </div>
+                                            </div>
+                                        </div>    
+                                       
+                                        
+                                    </div>
+                                    <div class="row g-2 mb-2">
+                                       
                                         <div class="col-md">
                                             <div class="form-floating">
                                                 <select class="form-select" onchange="return limitInput(event)" id="employeeType" name="employeeType" aria-label="Floating label select example">
@@ -266,7 +292,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row g-2 mb-2">
+                                        <!-- <div class="row g-2 mb-2">
                                             <div class="col-md-6">
                                             <div class="form-floating" id="datepicker4">
                                                 <input type="text" onkeypress="return limitInput(event)" data-type="date" name="dateOfJoining" id="dateOfJoining" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" disabled>
@@ -276,7 +302,7 @@
                                                 </div>
                                             </div>
                                             </div>    
-                                       </div>
+                                       </div> -->
                                     </div>
                                     
                                     <!-- <div class="row g-2 mb-2">

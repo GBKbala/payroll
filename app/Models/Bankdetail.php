@@ -9,13 +9,13 @@ class Bankdetail extends Model
 {
     use HasFactory;
     protected $table = 'bankdetails';
-    protected $fillable = ['id', 'eID', 'bankName', 'branch', 'ifscCode', 'accountNumber'];
+    protected $fillable = ['id', 'eID','employee_id', 'bankName', 'branch', 'ifscCode', 'accountNumber'];
 
     public function employee(){
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(Employee::class,'employee_id');
     }
 
     public function department(){
-        return $this->belongsTo(Department::class);
+        return $this->belongsTo(Department::class,'employee_id');
     }
 }

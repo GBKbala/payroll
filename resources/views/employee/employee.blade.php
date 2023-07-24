@@ -46,7 +46,7 @@
                             <tbody>
                                 @foreach ($employees as $employee)
                                     <tr>
-                                        <td>{{ $employee->eID }}</td>
+                                        <td>{{ $employee->eID}}</td>
                                         <td>{{ $employee->name }}</td>
                                         <td>{{ucfirst($employee->employeeType)}}</td>
                                         <td>{{ $employee->dob }}</td>
@@ -58,25 +58,25 @@
                                         <td>
                                             <!-- @php if($employee->employeeType !='freelancer' )  @endphp -->
                                             @if($employee->employeeType != 'freelancer')
-                                                <a href="{{ route('employee.id', $employee->eID) }}">
+                                                <a href="{{ route('employee.id', $employee->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                     View
                                                 </a>
                                             @elseif($employee->employeeType =='freelancer')   
-                                                <a href="{{ route('freeancer_pay', $employee->eID) }}">
+                                                <a href="{{ route('freeancer_pay', $employee->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                     View
                                                 </a>
                                             @endif
                                           </td>
                                         <td>
-                                            <a href="{{ route('employee.update', $employee->eID) }}">
+                                            <a href="{{ route('employee.update', $employee->id) }}">
                                                 <i class="dripicons-document-edit"></i>
                                                 Edit
                                             </a>
                                         </td>
                                         <td>
-                                            <a style="color:red" href="{{ route('employee.delete', $employee->eID) }}">
+                                            <a style="color:red" href="{{ route('employee.delete', $employee->id) }}">
                                                 <i class="dripicons-trash"></i>
                                                 Delete
                                             </a>
