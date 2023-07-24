@@ -259,7 +259,7 @@
                                                     <option value="axecode">Axe Code</option>
                                                     <option value="zoneflux">Zone Flux</option>
                                                 </select>
-                                                <label for="floatingInputGrid">Companyssss</label>
+                                                <label for="floatingInputGrid">Company</label>
                                                 <div class="invalid-feedback designation">
                                                     Please provide Company.
                                                 </div>
