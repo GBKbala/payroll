@@ -15,6 +15,11 @@
             display: flex;
             justify-content: flex-end;
         }
+        @media print {
+            .about-blank {
+                display: none;
+            }
+        }
     </style>
 @endsection
 @section('content')
@@ -64,7 +69,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
+                        <table id="datatable-buttons" class="table table-sm table-striped dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
                                     <th>Employee ID</th>
@@ -72,7 +77,6 @@
                                     <th>Employee Type</th>
                                     <th>Days</th>
                                     <th>Paid days</th>
-                                    {{-- <th>Leave</th> --}}
                                     <th>LOP</th>
                                     <th>Account Number</th>
                                     <th>PB</th>
@@ -231,6 +235,7 @@
                     if(response){
                         $('#month').removeAttr('disabled');
                     }
+                    console.log(response.allEmployeeSalary);
                     if(response.allEmployeeSalary.length > 0){
                         $('#salary').removeClass('hide');
                         $('#salary').addClass('allSalary');
@@ -265,10 +270,9 @@
                             table.fnAddData([
                                 data.eID,
                                 data.name,
-                                capitalize(data.employeeType),
+                                data.employeeType,
                                 data.working_days,
                                 data.paid_days,
-                                // data.leave_days,
                                 data.lop,
                                 data.accountNumber,
                                 numberWithCommas(data.performance_bonus),
@@ -302,11 +306,11 @@
                             return parseInt(a) + parseInt(b);
 
                         }, 0);
-                        // console.log(total);
+                        console.log(total);
                         total = numberWithCommas(total);
 
 
-                        var newRowData = ['Total', '', '','','','', '', '', '', '','',total, '<a href=""><i class="dripicons-document-edit"></i></a>',
+                        var newRowData = ['Total','','','','','','','','','','',total,'<a href=""><i class="dripicons-document-edit"></i></a>',
                                 '<a href=""><i class="dripicons-print"></i></a>',
                                 '<a href="javascript:void(0)" onclick=""><i class="dripicons-mail"></i></a>',
                                 '<a style="color:red" href="javascript:void(0)" onclick=""><i class="dripicons-trash"></i></a>'];

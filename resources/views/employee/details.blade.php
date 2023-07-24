@@ -174,8 +174,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md">
-                                                <div class="form-floating" id="datepicker4">
-                                                    <input type="text" id="forTheMonth"  data-date-autoclose="true" class="form-control validate" data-provide="datepicker" data-type="date"data-date-container="#datepicker4">
+                                                <div class="form-floating" id="datepicker5">
+                                                    <input type="text" id="forTheMonth"  data-date-autoclose="true" class="form-control validate" data-provide="datepicker" data-date-format="MM yyyy" data-type="date" data-date-container="#datepicker5">
                                                     <label for="floatingInputGrid">Salary for the Month</label>
                                                 </div>
                                             </div>

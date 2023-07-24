@@ -212,7 +212,9 @@ class EmployeeController extends Controller
     public function update(Request $request, $id){
         $data = [];
 
+
         if($request->isMethod('POST')){
+
 
             $exist = false;
 
@@ -222,8 +224,8 @@ class EmployeeController extends Controller
             //             ->where('employees.eID', '!=', $id)
             //             ->get();
 
-            $employees = Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->where('employees.eID','!=',$id)->get();
-        
+            $employees = Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->where('employees.id','!=',$id)->get();
+           
             foreach($employees as $employee){
 
                 if($employee->email == $request->input('email')){
@@ -292,7 +294,7 @@ class EmployeeController extends Controller
 
                 ];
 
-                Employee::where('eID', $id)->update($data1);
+                Employee::where('id', $id)->update($data1);
 
                 $data2 = [
                     'bankName' => $request->input('bankName'),

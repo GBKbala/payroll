@@ -84,7 +84,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <select class="form-select" name="blodgroup" id="bloodgroup" aria-label="Floating label select example">
+                                                    <select class="form-select" name="bloodgroup" id="bloodgroup" aria-label="Floating label select example">
                                                         <option disabled value=""></option>
                                                         <option value="a+" {{ $employee->bloodgroup == 'a+' ? 'selected' : '' }}>A +ve</option>
                                                         <option value="a+" {{ $employee->bloodgroup == 'a1+' ? 'selected' : '' }}>A1 +ve</option>
@@ -411,6 +411,7 @@
                 // $('body').css('opacity', '0.5');
                 // $('#preloader, #status').css('display', 'block');
                 // console.log(jsonData);
+                console.log(data);
 
                 $.ajax({
                     type: 'POST',

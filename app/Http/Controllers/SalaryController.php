@@ -23,25 +23,28 @@ class SalaryController extends Controller
 
         if($request->isMethod('POST')){
             $salaryMonth = $request->input('salaryMonth');
+
             // $data['allEmployeeSalary'] = Salaryslip::where('forTheMonth', '=', $salaryMonth)->get();
             // $date = date('m/Y', strtotime($salaryMonth));
             // dd($date);
             // dd($request->input(''))
            
-            $search_month = Carbon::createFromFormat('M Y', $request->input('salaryMonth'))->format('m/Y');
+            // $search_month = Carbon::createFromFormat('M Y', $request->input('salaryMonth'))->format('m/Y');
             // dd($search_month);
             
             $allEmployeeSalary = Salaryslip::where('is_deleted', '!=', 1)->get();
-            // dd($allEmployeeSalary);
+           
             
             $employeeSalary = [];
             foreach ($allEmployeeSalary as $key => $EmployeeSalary) {
                 # code...
                 // dd($EmployeeSalary, $key, Department::where('eID', $EmployeeSalary['eID'])->get('ctc'));
-                $currentMonth = explode('/',$EmployeeSalary->forTheMonth); 
-                $current_salary_month = $currentMonth[0].'/'.$currentMonth[2];
+
+                // $currentMonth = explode('/',$EmployeeSalary->forTheMonth); 
+                // $current_salary_month = $currentMonth[0].'/'.$currentMonth[2];
                 // dd($current_salary_month,$search_month );
-                if($current_salary_month == $search_month){
+
+                if($EmployeeSalary->forTheMonth == $salaryMonth){
                     $currentEmployee = Department::where('eID', $EmployeeSalary['eID'])->first();
                     // dd($EmployeeSalary['eID']);
                     $EmployeeSalary['ctc'] = $currentEmployee->ctc;

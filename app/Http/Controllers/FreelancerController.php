@@ -261,7 +261,7 @@ class FreelancerController extends Controller
 
         // $data['freelancer'] = Employee::where('eID','=',$id)->where('isDeleted','no')->first();
 
-        $data['freelancer'] = Employee::with('bankdetail')->where('employees.eID','=',$id)->where('isDeleted','=','no')->first();
+        $data['freelancer'] = Employee::with('bankdetail')->where('employees.id','=',$id)->where('isDeleted','=','no')->first();
        
         return view('freelancer.details',$data);
     
