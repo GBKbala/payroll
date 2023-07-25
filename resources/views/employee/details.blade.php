@@ -149,7 +149,7 @@
                                         <div class="row g-2 mb-2">
                                             <div class="col-md">
                                                 <div class="form-floating">
-                                                    <input maxlength="2" type="text" onkeypress="return limitInput(event)" data-type="number" id="lop" class="form-control validate" value="">
+                                                    <input  type="text" onkeypress="return limitInput(event)" data-type="number" id="lop" class="form-control validate" value="">
                                                     <label for="floatingInputGrid">Loss of pay</label>
                                                     <div class="invalid-feedback eID">
                                                         Please provide loss of pay.
@@ -175,8 +175,8 @@
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating" id="datepicker5">
-                                                    <input type="text" id="forTheMonth"  data-date-autoclose="true" class="form-control validate" data-provide="datepicker" data-date-format="MM yyyy" data-type="date" data-date-container="#datepicker5">
-                                                    <label for="floatingInputGrid">Salary for the Month</label>
+                                                    <input type="text" id="forTheMonth" class="form-control" data-date-format="MM yyyy" data-date-min-view-mode="1"  data-provide="datepicker" data-date-container="#datepicker5">
+                                                    <label for="floatingInputGrid">Salary for the Month </label>
                                                 </div>
                                             </div>
                                         </div>
@@ -411,6 +411,7 @@
                 }
                 $('#earnings, #deductions, #salary_div, #payslipGenerate').addClass('hide');
                 console.log(jsonData);
+              
                 $.ajax({
                     type: 'POST',
                     url: '{{ route("employee.get_salary") }}',

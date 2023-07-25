@@ -286,7 +286,7 @@
                                 '<a style="color:red" href="javascript:void(0)" onclick="delete_payslip('+data.id+')"><i class="dripicons-trash"></i></a>'
                             ]);
                         });
-
+                        console.log('TotalSalary'+numberWithCommas(TotalSalary));
                         $('#totalSalary').html(numberWithCommas(TotalSalary));
                         // console.log(table.api().column(9).data().toArray());
 
@@ -306,7 +306,7 @@
                             return parseInt(a) + parseInt(b);
 
                         }, 0);
-                        console.log(total);
+                        console.log("Page Total"+total);
                         total = numberWithCommas(total);
 
 

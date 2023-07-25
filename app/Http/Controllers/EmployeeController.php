@@ -500,17 +500,17 @@ class EmployeeController extends Controller
         
             foreach($checks as $check){
 
-                $current_employee_forthemonth = explode( "/", $check->forTheMonth);
-                $check_salary_forTheMonth = $current_employee_forthemonth[0].'/'.$current_employee_forthemonth[2];
+                // $current_employee_forthemonth = explode( "/", $check->forTheMonth);
+                // $check_salary_forTheMonth = $current_employee_forthemonth[0].'/'.$current_employee_forthemonth[2];
                
 
-                $input_month = explode('/', $request->input('forTheMonth'));
-                $input_salary_month =  $input_month[0].'/'. $input_month[2];  
+                // $input_month = explode('/', $request->input('forTheMonth'));
+                // $input_salary_month =  $input_month[0].'/'. $input_month[2];  
 
                 // dd($check_salary_forTheMonth,$input_salary_month);
                 
 
-                if($check_salary_forTheMonth == $input_salary_month){
+                if($check->forTheMonth == $request->forTheMonth){
                    
                     $data['message'] = 'Salary slip already created for this employee';
                     $data['code'] = '302';
