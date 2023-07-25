@@ -180,7 +180,7 @@
                                                     Please provide date of joining.
                                                 </div>
                                             </div>
-                                        </div>    
+                                        </div>     
                                        
                                         
                                     </div>
@@ -465,6 +465,8 @@
             }
             if(type.attr('data-type') == 'ifsc'){
                 var ASCIICode = (event.which) ? event.which : event.keyCode
+                alert(event.which);
+                alert(ASCIICode);
                 if ((ASCIICode > 47 && ASCIICode < 58) || (ASCIICode > 64 && ASCIICode < 91)){
                     return true;
                 } else {

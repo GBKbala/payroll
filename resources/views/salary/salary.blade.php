@@ -162,7 +162,7 @@
         }
 
         function capitalize(word) {
-            return word.charAt(0).toUpperCase() + word.slice(1);
+            return word ? word.charAt(0).toUpperCase() + word.slice(1) : '';
         }
 
         function mail_payslip(id){
@@ -270,7 +270,7 @@
                             table.fnAddData([
                                 data.eID,
                                 data.name,
-                                data.employeeType,
+                                capitalize(data.employeeType),
                                 data.working_days,
                                 data.paid_days,
                                 data.lop,

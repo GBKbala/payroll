@@ -315,13 +315,17 @@ class Controller extends BaseController
     }
 
     public function calculate_salary($salary, $paid_days, $lop, $performance_bonus, $professional_tax, $tds){
+        // var_dump($lop);
         if($lop > 0){
-            // var_dump($Lop);
+           
             // var_dump($salary);
             // var_dump($paid_days);
-            // exit;
+          
             $oneDay_salary = $salary/$paid_days;
             $salary = $salary -($lop * $oneDay_salary);
+            // var_dump($salary);
+           
+           
         }
         // echo $oneDay_salary.'<br>';
         // echo $salary;
@@ -334,6 +338,7 @@ class Controller extends BaseController
         $data['total_earnings'] = ceil($data['basic_wage']) + ceil($data['hra']) + ceil($data['conveyance_allowances']) + ceil($data['medical_allowances']) + ceil($data['other_allowances']) + $performance_bonus;
         $data['total_deductions'] = $professional_tax + $tds;
         $data['net_salary'] = ceil($data['total_earnings']) - ceil($data['total_deductions']);
+       
         return $data;
     }
 

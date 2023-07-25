@@ -411,6 +411,7 @@
                 }
                 $('#earnings, #deductions, #salary_div, #payslipGenerate').addClass('hide');
                 console.log(jsonData);
+               
               
                 $.ajax({
                     type: 'POST',

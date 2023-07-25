@@ -476,7 +476,7 @@ class EmployeeController extends Controller
 
         $id = $request->input('id');
         $eID = $request->input('eID');
-        $salary = $request->input('salary');
+        $salary = $request->input('salary'); 
         $working_days = $request->input('working_days');
         $paid_days = $request->input('paid_days');
         $lop = $request->input('lop');
@@ -486,8 +486,9 @@ class EmployeeController extends Controller
         $professional_tax = $request->input('professional_tax');
         $tds = $request->input('tds');
 
+       
         $data = $this->calculate_salary($salary, $paid_days, $lop, $performance_bonus, $professional_tax, $tds);
-    
+       
         return $data;
     }
 
@@ -496,7 +497,7 @@ class EmployeeController extends Controller
             $employee = Employee::where('eID', $request->input('eID'));
             // dd($request->all(), $employee->first()->email);
             
-            $checks = Salaryslip::where('eID','=',$request->input('eID'))->get();
+            $checks = Salaryslip::where('eID','=',$request->input('eID'))->where('is_deleted','!=',1)->get();
         
             foreach($checks as $check){
 
