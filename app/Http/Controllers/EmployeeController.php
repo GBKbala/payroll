@@ -51,7 +51,6 @@ class EmployeeController extends Controller
        
         $data['employees'] =  Employee::with('bankdetail','department')->where('employees.isDeleted','=','no')->whereNull('employees.dateOfRelieving')->orderBy('employees.id','desc')->get();
 
-    //    dd($data);
         return view('employee.employee', $data);
     }
 
@@ -107,19 +106,19 @@ class EmployeeController extends Controller
                 //     continue;
                 // }
 
-                // if($employee->eID == $eID){
-                //     $data['status'] = 'error';
-                //     $data['message'] = 'Employee ID already exists';
-                //     $exist = true;
-                //     continue;
-                // }
-
-                if($employee->officeEmail == $officeEmail){
+                if($employee->eID == $eID){
                     $data['status'] = 'error';
-                    $data['message'] = 'Office Email already exists';
+                    $data['message'] = 'Employee ID already exists';
                     $exist = true;
                     continue;
                 }
+
+                // if($employee->officeEmail == $officeEmail){
+                //     $data['status'] = 'error';
+                //     $data['message'] = 'Office Email already exists';
+                //     $exist = true;
+                //     continue;
+                // }
             }
 
             if($exist == false){

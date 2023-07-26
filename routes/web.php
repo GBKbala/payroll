@@ -19,6 +19,11 @@ use App\Http\Controllers\FreelancerController;
 |
 */
 
+Route::get('cache-clear', function(){
+    Artisan::call('optimize');
+    return 'optimzed';
+});
+
 // Route::get('/demo', function() { return 'ok'; });
 // Route::get('/', [RouteController::class, 'index'])->name('index');
 Route::get('/', [EmployeeController::class, 'index'])->name('index');

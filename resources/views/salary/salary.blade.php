@@ -209,9 +209,9 @@
             $('#month').attr('disabled', 'true');
             var monthName = $('#month').val();
             var month = getMonthFromString(monthName.split(' ')[0]);
-            console.log(month)
+            // console.log(month)
             var table = $("#datatable-buttons").dataTable();
-            console.log(table);
+            // console.log(table);
             var column = table.api().column(1).header();
             // $(column).text('Amount');
             // console.log(column);
@@ -235,7 +235,7 @@
                     if(response){
                         $('#month').removeAttr('disabled');
                     }
-                    console.log(response.allEmployeeSalary);
+                    // console.log(response.allEmployeeSalary);
                     if(response.allEmployeeSalary.length > 0){
                         $('#salary').removeClass('hide');
                         $('#salary').addClass('allSalary');
@@ -244,7 +244,7 @@
                         var TotalSalary = 0;
                         response.allEmployeeSalary.forEach(data => {
                             // console.log(data.freelancerAmount);
-                            console.log(data);
+                            // console.log(data);
                             if(data.employeeType == 'freelancer'){
                                 var updateURL = "{{ route('freelancer.update', 'ID') }}";
                                 updateURL = updateURL.replace('ID', data.id);
@@ -265,7 +265,7 @@
                             TotalSalary = Number(TotalSalary)+Number(data.net_salary);
                             TotalSalary=Math.round(TotalSalary);
                             // console.log(TotalSalary);
-                            console.log(data.net_salary);
+                            // console.log(data.net_salary);
                             data.accountNumber = data.accountNumber.replace(/.(?=.{4})/g, 'X');
                             table.fnAddData([
                                 data.eID,
@@ -286,7 +286,7 @@
                                 '<a style="color:red" href="javascript:void(0)" onclick="delete_payslip('+data.id+')"><i class="dripicons-trash"></i></a>'
                             ]);
                         });
-                        console.log('TotalSalary'+numberWithCommas(TotalSalary));
+                        // console.log('TotalSalary'+numberWithCommas(TotalSalary));
                         $('#totalSalary').html(numberWithCommas(TotalSalary));
                         // console.log(table.api().column(9).data().toArray());
 
@@ -306,7 +306,7 @@
                             return parseInt(a) + parseInt(b);
 
                         }, 0);
-                        console.log("Page Total"+total);
+                        // console.log("Page Total"+total);
                         total = numberWithCommas(total);
 
 

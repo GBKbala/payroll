@@ -159,8 +159,9 @@
                                         </div>
                                         <div class="row g-2 mb-2">
                                             <div class="col-md-6">
-                                                <div class="form-floating" id="datepicker4">
-                                                    <input type="text" data-type="date" id="paidDate" class="form-control validate" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4">
+                                                <div class="form-floating" id="datepicker5">
+                                                    <input type="text" data-type="date" id="paidDate" class="form-control validate" data-provide="datepicker"
+                                                    data-date-format="MM yyyy" data-date-min-view-mode="1" data-date-container="#datepicker5">
                                                     <label for="floatingInputGrid">Paid Date</label>
                                                 </div>
                                                 <div class="invalid-feedback name">
