@@ -307,7 +307,7 @@
 
                         }, 0);
                         // console.log("Page Total"+total);
-                        total = numberWithCommas(total);
+                        total = numberWithCommas(TotalSalary);
 
 
                         var newRowData = ['Total','','','','','','','','','','',total,'<a href=""><i class="dripicons-document-edit"></i></a>',

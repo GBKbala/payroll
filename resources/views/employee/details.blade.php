@@ -175,7 +175,7 @@
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating" id="datepicker5">
-                                                    <input type="text" id="forTheMonth" class="form-control" data-date-format="MM yyyy" data-date-min-view-mode="1"  data-provide="datepicker" data-date-container="#datepicker5">
+                                                    <input type="text" id="forTheMonth" class="form-control" data-date-format="MM yyyy" data-date-min-view-mode="1"  data-provide="datepicker" data-date-container="#datepicker5" autocomplete="off">
                                                     <label for="floatingInputGrid">Salary for the Month </label>
                                                 </div>
                                             </div>
@@ -413,7 +413,7 @@
                 console.log(jsonData);
                
               
-                $.ajax({
+                 $.ajax({
                     type: 'POST',
                     url: '{{ route("employee.get_salary") }}',
                     data: jsonData,

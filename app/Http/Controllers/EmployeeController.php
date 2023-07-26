@@ -477,7 +477,7 @@ class EmployeeController extends Controller
         $eID = $request->input('eID');
         $salary = $request->input('salary'); 
         $working_days = $request->input('working_days');
-        $paid_days = $request->input('paid_days');
+        $paid_days =  $request->input('paid_days');
         $lop = $request->input('lop');
         $leave_days = $request->input('leave_days');
         $performance_bonus = $request->input('performance_bonus');
@@ -485,9 +485,8 @@ class EmployeeController extends Controller
         $professional_tax = $request->input('professional_tax');
         $tds = $request->input('tds');
 
-       
         $data = $this->calculate_salary($salary, $paid_days, $lop, $performance_bonus, $professional_tax, $tds);
-       
+        
         return $data;
     }
 
