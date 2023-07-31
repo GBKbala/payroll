@@ -309,7 +309,6 @@
                         // console.log("Page Total"+total);
                         total = numberWithCommas(TotalSalary);
 
-
                         var newRowData = ['Total','','','','','','','','','','',total,'<a href=""><i class="dripicons-document-edit"></i></a>',
                                 '<a href=""><i class="dripicons-print"></i></a>',
                                 '<a href="javascript:void(0)" onclick=""><i class="dripicons-mail"></i></a>',

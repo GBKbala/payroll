@@ -418,8 +418,11 @@
                     url: '{{ route("employee.get_salary") }}',
                     data: jsonData,
                     success: function(data){
+                       
+                        // console.log(data);
                         $('body').css('opacity', '');
                         $('#preloader, #status').css('display', 'none');
+                      
                         if(data){
                             $('#earnings, #salary_div, #payslipGenerate').removeClass('hide');
                             $('#basic_wage').val(numberWithCommas(data.basic_wage));

@@ -318,11 +318,7 @@ class Controller extends BaseController
         
         if($lop > 0){
            
-            // var_dump($salary);
-            // var_dump($paid_days);
-          
             $oneDay_salary = $salary/$paid_days;
-            echo 'oneDay_salary : '.$oneDay_salary.'<br>';
             $salary = $salary -($lop * $oneDay_salary);
                      
         }

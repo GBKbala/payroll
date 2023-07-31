@@ -348,7 +348,7 @@ class EmployeeController extends Controller
         $data1 = [
             'isDeleted' => 'yes'
         ];
-        Employee::where('eID', $id)->update($data1);
+        Employee::where('id', $id)->update($data1);
 
         $data['status'] = 'success';
         $data['message'] = 'Employee deleted successfully';
@@ -486,7 +486,7 @@ class EmployeeController extends Controller
         $tds = $request->input('tds');
 
         $data = $this->calculate_salary($salary, $paid_days, $lop, $performance_bonus, $professional_tax, $tds);
-        
+       
         return $data;
     }
 
